@@ -1,0 +1,154 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #ff5733;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #ff5733;
+}
+.support-section {
+    margin-top: 40px;
+}
+.support-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+#support-chat {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+#messages {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 5px;
+}
+.message {
+    margin-bottom: 12px;
+    color: #bfbfbf;
+}
+input[type="text"] {
+    width: calc(100% - 90px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #fff;
+}
+button {
+    width: 80px;
+    padding: 10px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+button:hover {
+    background-color: #e6412d;
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    margin-top: 40px;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+footer a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s ease;
+}
+footer a:hover {
+    color: #ff5733;
+}
+
+@media (max-width: 600px) {
+    /* Styles for mobile devices */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 601px) {
+    /* Styles for tablets and larger devices */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Styles for desktops and larger devices */
+    body {
+        background-color: black;
+    }
+}
+@media (max-width: 768px) {
+    /* Styles for tablets in portrait mode */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+    /* Styles for tablets in landscape mode */
+    body {
+        background-color: black;
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Styles for high-resolution screens */
+    body {
+        background-color: black;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles for iPhone 6/7/8 */
+    body {
+        background-color: black;
+    }
+}

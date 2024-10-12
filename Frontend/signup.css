@@ -1,0 +1,173 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin: 0 auto;
+    /*max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;*/
+}
+header {
+    background-color: #222; /* Slightly lighter black for contrast */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    /*text-align: center;
+    padding: 20px 0;
+    display: flex;*/
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff5733; /* Blue hover effect for links */
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #ff5733;
+}
+.signup-section {
+    margin-top: 40px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 20px;
+}
+.signup-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff5733;
+}
+.signup-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+.signup-section label {
+    font-size: 1rem;
+    color: #fff;
+}
+.signup-section input[type="text"],
+.signup-section input[type="email"],
+.signup-section input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #fff;
+    outline: none;
+}
+.signup-section input[type="text"]::placeholder,
+.signup-section input[type="email"]::placeholder,
+.signup-section input[type="password"]::placeholder {
+    color: #888;
+}
+.signup-section button {
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+.signup-section button:hover {
+    background-color: #ff6b4a;
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    margin-top: 40px;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+footer ul li a:hover {
+    color: #ff5733;
+}
+
+@media (max-width: 600px) {
+    /* Styles for mobile devices */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 601px) {
+    /* Styles for tablets and larger devices */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Styles for desktops and larger devices */
+    body {
+        background-color: black;
+    }
+}
+@media (max-width: 768px) {
+    /* Styles for tablets in portrait mode */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+    /* Styles for tablets in landscape mode */
+    body {
+        background-color: black;
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Styles for high-resolution screens */
+    body {
+        background-color: black;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles for iPhone 6/7/8 */
+    body {
+        background-color: black;
+    }
+}

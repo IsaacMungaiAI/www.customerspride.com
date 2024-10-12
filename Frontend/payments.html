@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers Pride - Payment</title>
+    <link rel="stylesheet" href="payments.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Customers Pride</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="payment-section">
+            <h2>Payment</h2>
+            <div id="payment-details"></div>
+            <button id="pay-button">Pay with Mpesa</button>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script>
+        const currentOrder = JSON.parse(localStorage.getItem('currentOrder'));
+
+        if (!currentOrder) {
+            alert('No order found. Please go back and select a product.');
+            window.location.href = 'products.html';
+        } else {
+            document.getElementById('payment-details').innerHTML = `
+                <p>Product ID: ${currentOrder.productId}</p>
+                <p>Quantity: ${currentOrder.quantity}</p>
+                <p>Total Price: $${currentOrder.totalPrice}</p>
+            `;
+        }
+
+        document.getElementById('pay-button').addEventListener('click', function() {
+            // Simulate Mpesa payment process
+            alert('Payment successful via Mpesa!');
+            
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+            const newOrder = {
+                id: Date.now(),
+                productId: currentOrder.productId,
+                quantity: currentOrder.quantity,
+                totalPrice: currentOrder.totalPrice,
+                status: 'Pending'
+            };
+            orders.push(newOrder);
+            localStorage.setItem('orders', JSON.stringify(orders));
+            localStorage.removeItem('currentOrder');
+            
+            window.location.href = 'userHome.html';
+        });
+    </script>
+</body>
+</html>

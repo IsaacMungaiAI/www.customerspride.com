@@ -1,0 +1,133 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #ff5733;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff5733; /* Blue hover effect for links */
+}
+.about-section {
+    margin-top: 40px;
+}
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.about-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    margin-top: 40px;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+footer ul li a:hover{
+    color: #ff5733;
+}
+
+@media (max-width: 600px) {
+    /* Styles for mobile devices */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 601px) {
+    /* Styles for tablets and larger devices */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Styles for desktops and larger devices */
+    body {
+        background-color: black;
+    }
+}
+@media (max-width: 768px) {
+    /* Styles for tablets in portrait mode */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+    /* Styles for tablets in landscape mode */
+    body {
+        background-color: black;
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Styles for high-resolution screens */
+    body {
+        background-color: black;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles for iPhone 6/7/8 */
+    body {
+        background-color: black;
+    }
+}

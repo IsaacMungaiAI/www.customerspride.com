@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers Pride - User Home</title>
+    <link rel="stylesheet" href="userHomepage.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Customers Pride</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="user-home-section">
+            <h3>This is your account.
+                <br>You will see your orders status in this page.
+            </h3>
+            <h2>Your Orders</h2>
+            
+            <div id="user-orders-container">
+                <!-- Orders will be dynamically added here -->
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script>
+        const userOrdersContainer = document.getElementById('user-orders-container');
+        const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+        orders.forEach(order => {
+            const orderDiv = document.createElement('div');
+            orderDiv.classList.add('order');
+            orderDiv.innerHTML = `
+                <p>Order ID: ${order.id}</p>
+                <p>Product ID: ${
+order.productId}</p>
+<p>Quantity: ${order.quantity}</p>
+<p>Total Price: Ksh${order.totalPrice}</p>
+<p>Status: ${order.status}</p>
+`;
+userOrdersContainer.appendChild(orderDiv);
+});
+
+php
+    if (orders.length === 0) {
+        userOrdersContainer.innerHTML = '<p>No orders found.</p>';
+    }
+</script>
+</body>
+</html>

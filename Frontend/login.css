@@ -1,0 +1,151 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+}
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+header {
+    text-align: center;
+    padding-bottom: 20px;
+}
+header h1 {
+    font-size: 2.4rem;
+    margin: 0;
+    color: #ff5733; /* Brand color accent */
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #ff5733;
+}
+.login-section {
+    margin-top: 20px;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.login-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ff5733;
+}
+input[type="email"],
+input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #fff;
+    font-size: 1rem;
+}
+button {
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #e6412d;
+    transform: translateY(-2px);
+}
+footer {
+    text-align: center;
+    padding-top: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+footer a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: #ff5733;
+}
+
+@media (max-width: 600px) {
+    /* Styles for mobile devices */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 601px) {
+    /* Styles for tablets and larger devices */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Styles for desktops and larger devices */
+    body {
+        background-color: black;
+    }
+}
+@media (max-width: 768px) {
+    /* Styles for tablets in portrait mode */
+    body {
+        background-color: black;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+    /* Styles for tablets in landscape mode */
+    body {
+        background-color: black;
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Styles for high-resolution screens */
+    body {
+        background-color: black;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* Styles for iPhone 6/7/8 */
+    body {
+        background-color: black;
+    }
+}

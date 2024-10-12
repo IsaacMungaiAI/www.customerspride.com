@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers Pride - Support</title>
+    <link rel="stylesheet" href="support.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Customers Pride</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="support-section">
+            <h2>Support</h2>
+            <div id="support-chat">
+                <div id="messages"></div>
+                <input type="text" id="message-input" placeholder="Type your message">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script>
+        const messages = document.getElementById('messages');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                addMessage('User', message);
+                messageInput.value = '';
+                respondToMessage(message);
+            }
+        });
+
+        function addMessage(sender, message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            messages.appendChild(messageDiv);
+        }
+
+        function respondToMessage(message) {
+            // Simulate a bot response
+            setTimeout(() => {
+                addMessage('Support', 'Thank you for your message. We will get back to you shortly.');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

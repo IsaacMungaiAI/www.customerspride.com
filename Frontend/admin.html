@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers Pride - Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Customers Pride - Admin Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="admin-dashboard">
+            <div id="orders-section" class="section">
+                <h3>Orders</h3>
+                <div id="orders-container"></div>
+            </div>
+            <div id="upload-section" class="section">
+                <h3>Upload Product</h3>
+                <input type="file" id="product-image">
+                <input type="text" id="product-name" placeholder="Product Name">
+                <input type="number" id="product-price" placeholder="Product Price">
+                <input type="number" id="product-quantity" placeholder="Product Quantity">
+                <button id="upload-button">Upload</button>
+            </div>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script>
+        // Fetch and display orders
+        const ordersContainer = document.getElementById('orders-container');
+        const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+        orders.forEach(order => {
+            const orderDiv = document.createElement('div');
+            orderDiv.classList.add('order');
+            orderDiv.innerHTML = `
+                <p>Order ID: ${order.id}</p>
+                <p>Product: ${order.productName}</p>
+                <p>Quantity: ${order.quantity}</p>
+                <p>Total Price: $${order.totalPrice}</p>
+                <p>Status: ${order.status}</p>
+                <button onclick="completeOrder(${order.id})">Complete Order</button>
+            `;
+            ordersContainer.appendChild(orderDiv);
+        });
+
+        // Complete order function
+        function completeOrder(orderId) {
+            const orderIndex = orders.findIndex(order => order.id === orderId);
+            if (orderIndex > -1) {
+                orders[orderIndex].status = 'Completed';
+                localStorage.setItem('orders', JSON.stringify(orders));
+                window.location.reload();
+            }
+        }
+
+        // Upload product function
+        document.getElementById('upload-button').addEventListener('click', () => {
+            const productImage = document.getElementById('product-image').files[0];
+            const productName = document.getElementById('product-name').value;
+            const productPrice = document.getElementById('product-price').value;
+            const productQuantity = document.getElementById('product-quantity').value;
+
+            if (productImage && productName && productPrice && productQuantity) {
+                const reader = new FileReader();
+                reader.onload = function() {
+                    const product = {
+                        id: Date.now(),
+                        name: productName,
+                        price: productPrice,
+                        available: productQuantity > 0,
+                        image: reader.result
+                    };
+
+                    let products = JSON.parse(localStorage.getItem('products')) || [];
+                    products.push(product);
+                    localStorage.setItem('products', JSON.stringify(products));
+
+                    window.location.href = 'products.html';
+                };
+                reader.readAsDataURL(productImage);
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+</body>
+</html>
